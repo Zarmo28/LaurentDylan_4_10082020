@@ -4,21 +4,21 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeBtn = document.getElementsByClassName('close');
 
-// ------ DISPLAY MODAL ------ //
-// LAUNCH MODAL EVENTS
+// ------ AFFICHAGE MODAL ------ //
+// LANCEMENT DES ÉVÉNEMENTS MODAL
 modalBtn.forEach((btn) => btn.addEventListener('click', launchModal));
-// LAUNCH MODAL FORM
+// FORMULAIRE DE LANCEMENT DU MODAL
 function launchModal() {
   modalbg.style.display = 'block';
 }
-// CLOSE MODAL FORM
+// FERMER LE FORMULAIRE MODAL
 function closeModal() {
   modalbg.style.display = 'none';
 }
 closeBtn[0].addEventListener('click', closeModal);
 
-// ------ DISPLAY NAV RESPONSIVE ------ //
-// EDIT NAV
+// ------ AFFICHAGE NAV RESPONSABLE ------ //
+// MODIFIER  NAV
 function editNav() {
   var x = document.getElementById('myTopnav');
   if (x.className === 'topnav') {

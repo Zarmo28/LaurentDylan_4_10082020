@@ -1,4 +1,4 @@
-// DOM ELEMENTS FORM FIELDS VALIDATION
+//Validation des élements du formulaire
 const firstName = document.getElementById('first');
 const lastName = document.getElementById('last');
 const email = document.getElementById('email');
@@ -11,8 +11,8 @@ const input = document.getElementsByClassName('text-control');
 const form = document.getElementById('form');
 const regex = /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/;
 
-// ------ FORM FIELDS VALIDATION ------ //
-// NAMES CHECK (FIRST NAME AND LAST NAME)
+// ------ Validation des champs du formulaire ------ //
+// Noms CHECK (PRENOM ET NOM)
 function checkFirstName() {
     if (firstName.value.trim().length < 2 || first.value.trim() === '' || !firstName.value.match(regex)) {
         firstName.parentElement.setAttribute('data-error-visible', 'true');
@@ -48,7 +48,7 @@ function checkEmail() {
     return false;
 }
 
-// BIRTHDATE CHECK
+// DATE DE NAISSANCE CHECK
 function checkBirthdate() {
     if (birthdate.value.trim().length !== 10) {
         birthdate.parentElement.setAttribute('data-error-visible', 'true');
@@ -60,7 +60,7 @@ function checkBirthdate() {
     return true;
 }
 
-// NUMBER OF TOURNAMENTS CHECK
+// NOMBRE DE TOURNOIS CHECK
 function checkTournamentsQuantity() {
     if (quantity.value.trim().length === 0 || isNaN(quantity.value.trim()) === true || quantity.value.trim() < 0) {
         quantity.parentElement.setAttribute('data-error-visible', 'true');
@@ -72,7 +72,7 @@ function checkTournamentsQuantity() {
     return true;
 }
 
-// LOCATIONS CHECK
+// LOCALISATION CHECK
 function checkLocations() {
     allLocations.setAttribute('data-error-visible', 'true');
     for (let i = 0; i < locations.length; i++) {
@@ -84,7 +84,7 @@ function checkLocations() {
     return false;
 }
 
-// TERMS OF USE CHECK CHECK
+// CONDITIONS D'UTILISATION CHECK
 function checkCheckBox() {
     if (checkbox1.checked === false) {
         checkbox1.parentElement.setAttribute('data-error-visible', 'true');
@@ -94,7 +94,7 @@ function checkCheckBox() {
     return true;
 }
 
-// FORM FIELDS EVENTS
+// ÉVÉNEMENTS SUR LES CHAMPS DE FORMULE CHECK
 function formFieldsValidation(element, method, event) {
     element.addEventListener(event, method);
 }
@@ -106,7 +106,7 @@ formFieldsValidation(quantity, checkTournamentsQuantity, 'focusout');
 formFieldsValidation(allLocations, checkLocations, 'change');
 formFieldsValidation(checkbox1, checkCheckBox, 'change');
 
-// FOR ALL FIELDS VALIDATION
+// VALIDATION POUR TOUS LES CHAMPS
 function forAllFieldsValidation() {
     checkFirstName()
     checkLastName()
@@ -130,7 +130,7 @@ function formValidation() {
     return false;
 }
 
-// SEND FORM
+// ENVOYER LE FORMULAIRE
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (formValidation() == true) {
